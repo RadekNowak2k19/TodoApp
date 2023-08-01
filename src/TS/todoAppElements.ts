@@ -33,6 +33,11 @@ inputElement.type = "search";
 inputElement.placeholder = "Create a new todo...";
 
 // XXXXXXXXX
+// addTaskButton
+// XXXXXXXXX
+const addTaskButton: HTMLButtonElement = document.createElement("button");
+
+// XXXXXXXXX
 // Tasks
 // XXXXXXXXX
 const tasksContainerElement: HTMLDivElement = document.createElement("div");
@@ -66,6 +71,7 @@ dragText.innerText = "Drag and drop to reorder list";
 appContainer.classList.add("app-container");
 logoColorElement.classList.add("logo-color");
 searchElement.classList.add("search");
+addTaskButton.classList.add("task-button");
 tasksContainerElement.classList.add("tasks-container");
 tasksListElement.classList.add("tasks-list");
 tasksCounterElement.classList.add("tasks-counter");
@@ -85,6 +91,7 @@ darkLightModeElement.appendChild(darkLightModeImageElement);
 
 appContainer.appendChild(searchElement);
 searchElement.appendChild(inputElement);
+searchElement.appendChild(addTaskButton);
 
 appContainer.appendChild(tasksContainerElement);
 tasksContainerElement.appendChild(tasksListElement);
