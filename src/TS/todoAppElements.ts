@@ -41,7 +41,7 @@ const addTaskButton: HTMLButtonElement = document.createElement("button");
 // Tasks
 // XXXXXXXXX
 const tasksContainerElement: HTMLDivElement = document.createElement("div");
-const tasksListElement: HTMLUListElement = document.createElement("ul");
+export const tasksListElement: HTMLUListElement = document.createElement("ul");
 
 // XXXXXXXXX
 // TasksCounter
@@ -71,7 +71,7 @@ dragText.innerText = "Drag and drop to reorder list";
 appContainer.classList.add("app-container");
 logoColorElement.classList.add("logo-color");
 searchElement.classList.add("search");
-addTaskButton.classList.add("task-button");
+addTaskButton.classList.add("add-btn", "task-button");
 tasksContainerElement.classList.add("tasks-container");
 tasksListElement.classList.add("tasks-list");
 tasksCounterElement.classList.add("tasks-counter");

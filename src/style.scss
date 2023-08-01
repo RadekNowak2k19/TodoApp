@@ -1,5 +1,6 @@
 @use "./variables.scss" as *;
 @use "./SCSS/index";
+
 *,
 *::before,
 *::after {
@@ -54,6 +55,15 @@ h6 {
 }
 .button-opacity.active {
 	color: $Bright-Blue;
+}
+.task-button {
+	background-color: transparent;
+	border: 1px solid $Dark-Grayish-Blue;
+	border-radius: 50vh;
+	cursor: pointer;
+	height: 24px;
+	margin-right: 1rem;
+	width: 24px;
 }
 // Mobile container utility class:
 .container {

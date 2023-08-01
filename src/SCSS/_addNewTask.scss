@@ -1,0 +1,25 @@
+@use "../variables.scss" as *;
+.tasks-list {
+	.list-item {
+		border-bottom: 1px solid $Light-Grayish-Blue;
+		list-style-type: none;
+		padding: 1rem;
+		.task {
+			@include displayBetween();
+			.task-done {
+				@include displayBetween();
+				align-items: flex-start;
+				.task-done-btn {
+					img {
+					}
+				}
+			}
+			.task-name {
+				color: $Very-Dark-Grayish-Blue;
+			}
+			.remove-task {
+				cursor: pointer;
+			}
+		}
+	}
+}

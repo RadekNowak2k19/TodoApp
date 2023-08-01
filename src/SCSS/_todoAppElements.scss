@@ -8,9 +8,7 @@
 	transform: translateX(-50%);
 	width: 325px;
 	.logo-color {
-		align-items: center;
-		display: flex;
-		justify-content: space-between;
+		@include displayBetween();
 		span {
 			box-shadow: $BoxShadow;
 			color: $Very-Light-Gray;
@@ -27,43 +25,38 @@
 			padding: 12px 55px;
 			width: 100%;
 		}
-		.task-button {
-			background-color: transparent;
-			border: 1px solid $Dark-Grayish-Blue;
-			border-radius: 50vh;
-			cursor: pointer;
-			height: 24px;
-			left: 0;
+		.add-btn {
 			margin: 0 1rem;
+			left: 0;
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
-			width: 24px;
+			transition: scale 0.2s ease-in-out;
+			&:active {
+				box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+				scale: 0.9;
+			}
 		}
 	}
 	.tasks-container {
-		background-color: #fff;
+		background-color: $Very-Light-Gray;
 		border-radius: $BorderRadius;
 		box-shadow: $BoxShadow;
 		font-size: $FontSize;
 		.tasks-list {
 		}
 		.tasks-counter {
-			align-items: center;
+			@include displayBetween();
 			color: $Dark-Grayish-Blue;
-			display: flex;
-			justify-content: space-between;
 			padding: 0.85rem;
 			.items-left {
-				align-items: center;
-				display: flex;
-				justify-content: space-between;
+				@include displayBetween();
 				gap: 0.5rem;
 			}
 		}
 	}
 	.buttons-container {
-		background-color: #fff;
+		background-color: $Very-Light-Gray;
 		box-shadow: $BoxShadow;
 		border-radius: $BorderRadius;
 		margin: 1rem auto;
