@@ -23,3 +23,9 @@ $FontSize: 18px;
 $GoogleFont: "Josefin Sans", sans-serif;
 $BorderRadius: 5px;
 $BoxShadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+@mixin displayBetween() {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
