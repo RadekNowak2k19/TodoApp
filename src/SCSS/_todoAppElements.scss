@@ -1,0 +1,81 @@
+@use "../variables.scss" as *;
+
+.app-container {
+	left: 50%;
+	margin: 0 auto;
+	position: absolute;
+	top: 6%;
+	transform: translateX(-50%);
+	width: 325px;
+	.logo-color {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		span {
+			box-shadow: $BoxShadow;
+			color: $Very-Light-Gray;
+			font-size: 28px;
+			font-weight: bold;
+		}
+	}
+	.search {
+		margin: 1rem auto;
+		input {
+			border: none;
+			border-radius: $BorderRadius;
+			padding: 12px 16px;
+			width: 100%;
+		}
+	}
+	.tasks-container {
+		background-color: #fff;
+		border-radius: $BorderRadius;
+		box-shadow: $BoxShadow;
+		font-size: $FontSize;
+		.tasks-list {
+		}
+		.tasks-counter {
+			align-items: center;
+			color: $Dark-Grayish-Blue;
+			display: flex;
+			justify-content: space-between;
+			padding: 0.85rem;
+			.items-left {
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+				gap: 0.5rem;
+			}
+		}
+	}
+	.buttons-container {
+		background-color: #fff;
+		box-shadow: $BoxShadow;
+		border-radius: $BorderRadius;
+		margin: 1rem auto;
+		padding: 1rem;
+		text-align: center;
+		.button-opacity {
+			margin-right: 1rem;
+		}
+	}
+	.drag-text {
+		color: $Dark-Grayish-Blue;
+		text-align: center;
+		font-size: $FontSize;
+		padding: 1rem 0;
+	}
+}
+
+@media (min-width: 475px) {
+	.app-container {
+		width: 450px;
+	}
+}
+/* sm */
+@media (min-width: 640px) {
+	.app-container {
+		width: 550px;
+		top: 10%;
+	}
+}
