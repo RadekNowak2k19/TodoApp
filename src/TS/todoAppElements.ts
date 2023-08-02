@@ -2,8 +2,6 @@ import { iconMoon } from "../images";
 const app = document.querySelector("#app");
 const appContainer: HTMLDivElement = document.createElement("div");
 
-let tasksLeft: number = 8;
-
 const renderButtonElement = (text: string) => {
 	const buttonElement: HTMLButtonElement = document.createElement("button");
 	buttonElement.classList.add("button-opacity");
@@ -52,7 +50,6 @@ const counterParagraphElement: HTMLParagraphElement =
 	document.createElement("p");
 const spanElement: HTMLSpanElement = document.createElement("span");
 
-// spanElement.innerText = `${tasksLeft}`;
 counterParagraphElement.innerText = "items left";
 
 // XXXXXXXXX
