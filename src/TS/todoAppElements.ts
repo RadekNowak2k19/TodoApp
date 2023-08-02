@@ -29,7 +29,7 @@ darkLightModeImageElement.src = iconMoon;
 // XXXXXXXXX
 const searchElement: HTMLDivElement = document.createElement("div");
 const inputElement: HTMLInputElement = document.createElement("input");
-inputElement.type = "search";
+inputElement.type = "text";
 inputElement.placeholder = "Create a new todo...";
 
 // XXXXXXXXX
@@ -52,7 +52,7 @@ const counterParagraphElement: HTMLParagraphElement =
 	document.createElement("p");
 const spanElement: HTMLSpanElement = document.createElement("span");
 
-spanElement.innerText = `${tasksLeft}`;
+// spanElement.innerText = `${tasksLeft}`;
 counterParagraphElement.innerText = "items left";
 
 // XXXXXXXXX

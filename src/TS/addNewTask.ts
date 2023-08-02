@@ -1,8 +1,13 @@
 import { iconCheck, iconCross } from "../images";
-const ulListElement = document.querySelector(".tasks-list");
+const ulListElement: any = document.querySelector(".tasks-list");
+const inputElement: any = document.querySelector("input[type='text']");
+const addBtn = document.querySelector(".add-btn");
+const spanElement: HTMLElement | any =
+	document.querySelector(".items-left span");
 export interface Task {
 	name: string;
 	done: boolean;
+	id?: string | any;
 }
 export const tasks: Task[] = [
 	{
@@ -16,6 +21,7 @@ export const tasks: Task[] = [
 ];
 
 const renderTask = () => {
+	ulListElement.innerHTML = "";
 	tasks.map(task => {
 		const listElement: HTMLLIElement = document.createElement("li");
 		const taskContainerElement: HTMLDivElement = document.createElement("div");
@@ -53,3 +59,39 @@ const renderTask = () => {
 	});
 };
 renderTask();
+spanElement.innerText = String(tasks.length);
+
+const joinTaskName = (task: string) => {
+	const taskName = task.split(" ").join("-");
+	return taskName;
+};
+joinTaskName("to jets jakis teskt");
+
+const addTask = (taskName: string) => {
+	tasks.push({
+		name: taskName,
+		done: false,
+		id: `id-${tasks.length}-${joinTaskName(taskName)}`,
+	});
+};
+
+const renderNewTask = () => {
+	if (inputElement.value.trim() === "") return;
+
+	addTask(inputElement.value);
+	renderTask();
+	spanElement.innerText = String(tasks.length);
+	inputElement.value = "";
+	inputElement.focus();
+	console.log(tasks);
+};
+
+addBtn?.addEventListener("click", (e: Event) => {
+	e.preventDefault();
+	renderNewTask();
+});
+
+window.addEventListener("keydown", e => {
+	if (e.key === "Enter") renderNewTask();
+	else return;
+});
