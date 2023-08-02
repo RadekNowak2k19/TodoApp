@@ -1,8 +1,9 @@
 import { iconCheck, iconCross } from "../images";
+import { removeTasks } from "./removeTask";
 const ulListElement: any = document.querySelector(".tasks-list");
 const inputElement: any = document.querySelector("input[type='text']");
 const addBtn = document.querySelector(".add-btn");
-const spanElement: HTMLElement | any =
+export const spanElement: HTMLElement | any =
 	document.querySelector(".items-left span");
 export interface Task {
 	name: string;
@@ -10,15 +11,21 @@ export interface Task {
 	id?: string | any;
 }
 export const tasks: Task[] = [
-	{
-		name: "Example 1",
-		done: false,
-	},
-	{
-		name: "Example 2",
-		done: false,
-	},
+	// {
+	// 	name: "Example 1",
+	// 	done: false,
+	// 	id: "id-0-Example-1",
+	// },
+	// {
+	// 	name: "Example 2",
+	// 	done: false,
+	// 	id: "id-1-Example-2",
+	// },
 ];
+const joinTaskName = (task: string) => {
+	const taskName = task.split(" ").join("-");
+	return taskName;
+};
 
 const renderTask = () => {
 	ulListElement.innerHTML = "";
@@ -28,6 +35,9 @@ const renderTask = () => {
 		const taskDoneElement: HTMLDivElement = document.createElement("div");
 		const taskDoneButton: HTMLButtonElement = document.createElement("button");
 		const iconCheckImage: HTMLImageElement = document.createElement("img");
+
+		listElement.id = task.id;
+
 		iconCheckImage.src = iconCheck;
 		iconCheckImage.alt = "Icon check image";
 
@@ -54,18 +64,13 @@ const renderTask = () => {
 		removeTask.appendChild(removeTaskIcon);
 
 		ulListElement?.appendChild(listElement);
-
 		return listElement;
 	});
 };
 renderTask();
+const listElement = document.querySelector(".list-item");
+console.log(listElement);
 spanElement.innerText = String(tasks.length);
-
-const joinTaskName = (task: string) => {
-	const taskName = task.split(" ").join("-");
-	return taskName;
-};
-joinTaskName("to jets jakis teskt");
 
 const addTask = (taskName: string) => {
 	tasks.push({
@@ -84,6 +89,8 @@ const renderNewTask = () => {
 	inputElement.value = "";
 	inputElement.focus();
 	console.log(tasks);
+	console.log(tasks.length);
+	removeTasks();
 };
 
 addBtn?.addEventListener("click", (e: Event) => {
