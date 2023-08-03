@@ -1,6 +1,7 @@
 import { iconCheck, iconCross } from "../images";
 import { removeTasks } from "./removeTask";
 import { taskDone } from "./taskDone";
+import { clearCompleted } from "./clearCompleted";
 const ulListElement: any = document.querySelector(".tasks-list");
 const inputElement: any = document.querySelector("input[type='text']");
 const addBtn = document.querySelector(".add-btn");
@@ -76,8 +77,6 @@ export const renderTask = () => {
 		return listElement;
 	});
 };
-const listElement = document.querySelector(".list-item");
-console.log(listElement);
 spanElement.innerText = String(tasks.length);
 
 const addTask = (taskName: string) => {
@@ -96,10 +95,9 @@ const renderNewTask = () => {
 	spanElement.innerText = String(tasks.length);
 	inputElement.value = "";
 	inputElement.focus();
-	console.log(tasks);
-	console.log(tasks.length);
 	removeTasks();
 	taskDone();
+	clearCompleted();
 };
 
 addBtn?.addEventListener("click", (e: Event) => {

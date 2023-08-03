@@ -104,3 +104,7 @@ buttonsContainerElement.appendChild(renderButtonElement("Active"));
 buttonsContainerElement.appendChild(renderButtonElement("Completed"));
 
 appContainer.appendChild(dragText);
+
+document
+	.querySelector(".tasks-counter button")
+	?.classList.add("clear-completed");
