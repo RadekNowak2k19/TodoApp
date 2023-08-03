@@ -44,6 +44,17 @@
 		box-shadow: $BoxShadow;
 		font-size: $FontSize;
 		.tasks-list {
+			.list-item {
+				.task {
+					.task-done {
+						&-btn {
+							img {
+								// opacity: 0;
+							}
+						}
+					}
+				}
+			}
 		}
 		.tasks-counter {
 			@include displayBetween();

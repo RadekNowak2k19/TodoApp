@@ -1,5 +1,6 @@
 import { iconCheck, iconCross } from "../images";
 import { removeTasks } from "./removeTask";
+import { taskDone } from "./taskDone";
 const ulListElement: any = document.querySelector(".tasks-list");
 const inputElement: any = document.querySelector("input[type='text']");
 const addBtn = document.querySelector(".add-btn");
@@ -27,7 +28,7 @@ const joinTaskName = (task: string) => {
 	return taskName;
 };
 
-const renderTask = () => {
+export const renderTask = () => {
 	ulListElement.innerHTML = "";
 	tasks.map(task => {
 		const listElement: HTMLLIElement = document.createElement("li");
@@ -55,6 +56,14 @@ const renderTask = () => {
 		taskName.classList.add("task-name");
 		removeTask.classList.add("remove-task");
 
+		// const parentElemnet = listElement;
+		tasks.filter(task => {
+			if (task.done === true && task.id === listElement.id) {
+				taskDoneButton.classList.add("task-completed");
+				taskName.classList.add("task-completed");
+			}
+		});
+
 		listElement.appendChild(taskContainerElement);
 		taskContainerElement.appendChild(taskDoneElement);
 		taskDoneElement.appendChild(taskDoneButton);
@@ -67,7 +76,6 @@ const renderTask = () => {
 		return listElement;
 	});
 };
-renderTask();
 const listElement = document.querySelector(".list-item");
 console.log(listElement);
 spanElement.innerText = String(tasks.length);
@@ -91,6 +99,7 @@ const renderNewTask = () => {
 	console.log(tasks);
 	console.log(tasks.length);
 	removeTasks();
+	taskDone();
 };
 
 addBtn?.addEventListener("click", (e: Event) => {
