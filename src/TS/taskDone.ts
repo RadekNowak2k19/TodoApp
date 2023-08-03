@@ -4,7 +4,6 @@ export const taskDone = () => {
 	taskDoneBtn.forEach(doneBtn => {
 		doneBtn.addEventListener("click", () => {
 			const parentElement = doneBtn.parentElement?.parentElement?.parentElement;
-			console.log(parentElement);
 			const taskName: HTMLParagraphElement | any = doneBtn.nextSibling;
 			tasks.findIndex(task => {
 				if (task?.id === parentElement?.id || task?.id === undefined) {
