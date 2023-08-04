@@ -15,6 +15,9 @@
 			font-size: 28px;
 			font-weight: bold;
 		}
+		.dark-mode-icon {
+			cursor: pointer;
+		}
 	}
 	.search {
 		margin: 1rem auto;
@@ -49,7 +52,7 @@
 					.task-done {
 						&-btn {
 							img {
-								// opacity: 0;
+								opacity: 0;
 							}
 						}
 					}

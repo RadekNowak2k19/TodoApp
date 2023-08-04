@@ -67,6 +67,7 @@ dragText.innerText = "Drag and drop to reorder list";
 // XXXXXXXXX
 appContainer.classList.add("app-container");
 logoColorElement.classList.add("logo-color");
+darkLightModeElement.classList.add("dark-mode-icon");
 searchElement.classList.add("search");
 addTaskButton.classList.add("add-btn", "task-button");
 tasksContainerElement.classList.add("tasks-container");
