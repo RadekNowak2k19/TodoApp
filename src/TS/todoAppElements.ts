@@ -108,3 +108,7 @@ appContainer.appendChild(dragText);
 document
 	.querySelector(".tasks-counter button")
 	?.classList.add("clear-completed");
+
+document
+	.querySelector(".buttons-container button")
+	?.classList.add("button-active");

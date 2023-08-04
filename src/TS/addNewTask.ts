@@ -2,6 +2,7 @@ import { iconCheck, iconCross } from "../images";
 import { removeTasks } from "./removeTask";
 import { taskDone } from "./taskDone";
 import { clearCompleted } from "./clearCompleted";
+import { displayAllActiveCompleted } from "./displayActiveCompletedTask";
 const ulListElement: any = document.querySelector(".tasks-list");
 const inputElement: any = document.querySelector("input[type='text']");
 const addBtn = document.querySelector(".add-btn");
@@ -29,7 +30,7 @@ const joinTaskName = (task: string) => {
 	return taskName;
 };
 
-export const renderTask = () => {
+export const renderTask = (tasks: Task[]) => {
 	ulListElement.innerHTML = "";
 	tasks.map(task => {
 		const listElement: HTMLLIElement = document.createElement("li");
@@ -91,13 +92,14 @@ const renderNewTask = () => {
 	if (inputElement.value.trim() === "") return;
 
 	addTask(inputElement.value);
-	renderTask();
+	renderTask(tasks);
 	spanElement.innerText = String(tasks.length);
 	inputElement.value = "";
 	inputElement.focus();
 	removeTasks();
 	taskDone();
 	clearCompleted();
+	displayAllActiveCompleted();
 };
 
 addBtn?.addEventListener("click", (e: Event) => {
