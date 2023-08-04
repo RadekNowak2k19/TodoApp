@@ -75,6 +75,7 @@
 		text-align: center;
 		.button-opacity {
 			margin-right: 1rem;
+			transition: 0.05s ease-in;
 		}
 	}
 	.drag-text {
@@ -84,7 +85,10 @@
 		padding: 1rem 0;
 	}
 }
-
+.button-opacity.button-active {
+	color: $Bright-Blue;
+	font-weight: bold;
+}
 @media (min-width: 475px) {
 	.app-container {
 		width: 450px;
